@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;LocationJSFController.java&apos; to &apos;Jardin/src/main/java/tn.esprit.spring.controller&apos;&#x0D;&#x0A;- Original project: &apos;Dari&apos;&#x0D;&#x0A;- Destination element: &apos;Jardin/src/main/java/tn.esprit.spring.controller&apos;&#x0D;&#x0A;- Original element: &apos;tn.esprit.spring.control.LocationJSFController.java&apos;" description="Copy compilation unit" destination="=Jardin/src\/main\/java&lt;tn.esprit.spring.controller" element1="/src\/main\/java&lt;tn.esprit.spring.control{LocationJSFController.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1620127296995" units="1" version="1.0"/>
+</session>

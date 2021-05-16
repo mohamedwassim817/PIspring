@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<html lang="en" xmlns:lang="en"  xmlns="http://www.w3.org/1999/xhtml"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+ xmlns:p="http://primefaces.org/ui"
+      xmlns:pe="http://primefaces.org/ui/extensions"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+
+ <link rel="apple-touch-icon" href="../../front/images/apple-icon.png"></link>
+       <link rel="shortcut icon" href="favicon.ico"></link>
+<link rel="stylesheet" media="all" href="../../front/css/style.css" />
+         <link rel="stylesheet" href="../../assets/assets/css/normalize.css"></link>
+        <link rel="stylesheet" href="../../assets/assets/css/bootstrap.min.css"></link>
+        <link rel="stylesheet" href="../../assets/assets/css/font-awesome.min.css"></link>
+        <link rel="stylesheet" href="../../assets/assets/css/themify-icons.css"></link>
+        <link rel="stylesheet" href="../../assets/assets/css/flag-icon.min.css"></link>
+        <link rel="stylesheet" href="../../assets/assets/css/cs-skin-elastic.css"></link>
+         <link rel="stylesheet" href="../../assets/assets/css/lib/datatable/dataTables.bootstrap.min.css"></link>
+   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <link rel="stylesheet" href="../../assets/assets/scss/style.css"></link>
+
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'></link>
+        
+                    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>   
+ <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="assets/assets/js/popper.min.js"></script>
+    <script src="assets/assets/js/plugins.js"></script>
+    <script src="assets/assets/js/main.js"></script>
+ <body>
+<header id="header">
+		<div class="container">
+		<a href="http://localhost:8080/ProjectMVC/pages/actualite/ajoutActualite.jsf" id="logo" title="Jardin">ajout actualite</a>
+				<div class="menu-trigger"></div>
+			<nav id="menu">
+				<ul>
+					<li><a href="#">   </a></li>
+					<li><a href="http://localhost:8085/ProjectMVC/pages/actualite/ajoutActualite.jsf">ajout actualite</a></li>
+					<li><a href="http://localhost:8085/ProjectMVC/pages/actualite/stat.jsf">statistiques</a></li>
+					
+ 				</ul>
+				<ul>
+					<li><a href="http://localhost:8085/ProjectMVC/pages/actualite/acceuil.jsf">Actualite</a></li>
+					<li><a href="#">   </a></li>
+					<li><a href="http://localhost:8080/ProjectMVC/">Deconnection</a></li>
+					
+   				</ul>
+			</nav>
+				</div>
+		
+	</header>
+
+	
+	<div class="slider">
+		<ul class="bxslider">
+			<li>
+				<div class="container">
+					<div class="info">
+						<h2>It s Time to <br/><span>Get back to school</span></h2>
+						<a href="#">Check out our new programs</a>
+					</div>
+				</div>
+				<!-- / content -->
+			</li>
+			<li>
+				<div class="container">
+					<div class="info">
+						<h2>It s Time to <br/><span>Get back to school</span></h2>
+						<a href="#">Check out our new programs</a>
+					</div>
+				</div>
+				<!-- / content -->
+			</li>
+			<li>
+				<div class="container">
+					<div class="info">
+						<h2>It s Time to <br/><span>Get back to school</span></h2>
+						<a href="#">Check out our new programs</a>
+					</div>
+				</div>
+				<!-- / content -->
+			</li>
+		</ul>
+		<div class="bg-bottom"></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<html xmlns="http://www.w3c.org/1999/xhtml"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:p="http://primefaces.org/ui"
+        xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+
+ <h:head>
+    </h:head>
+    <h:body>
+
+<h:form  >
+<table>
+
+
+<tr><td><h:outputText value="Titre"></h:outputText></td>
+<td><h:inputText value="#{ActualiteControllerImp.title}"></h:inputText></td></tr>
+<tr><td><h:outputText value="image"></h:outputText></td>
+<td><h:inputText value="#{ActualiteControllerImp.image}"></h:inputText></td>
+
+</tr>
+
+<tr><td><h:outputText value="pubHouse"></h:outputText></td>
+<td><h:inputText value="#{ActualiteControllerImp.pubHouse}"></h:inputText></td></tr>
+<tr><td><h:outputText value="resume"></h:outputText></td>
+<td><h:inputText value="#{ActualiteControllerImp.summary}"></h:inputText></td></tr>
+<tr><td><h:outputText value="date"></h:outputText></td> 
+<td><h:inputText value="#{ActualiteControllerImp.releaseDate}" >
+      <f:convertDateTime pattern="dd/MM/yyyy"  />
+</h:inputText></td></tr>
+<tr><td><h:outputText value="quantite"></h:outputText></td>
+<td><h:inputText value="#{ActualiteControllerImp.quantity}"></h:inputText></td></tr>
+
+<tr><td><h:outputText value="authors"></h:outputText></td>
+<td><h:inputText value="#{ActualiteControllerImp.authors}"></h:inputText></td></tr>
+
+
+
+
+<tr>
+<td><h:outputText value="categorie"></h:outputText></td>
+<td>
+<h:selectOneMenu value="#{ActualiteControllerImp.se}">
+<f:selectItem itemLabel="Choisir categorie"  />
+<f:selectItems  value="#{ActualiteControllerImp.categories1}" var="s" itemValue="#{s.id}" itemLabel="#{s}"/>
+</h:selectOneMenu>
+</td>
+</tr>
+
+
+<tr>
+<td colspan="2"> 
+
+</td>
+</tr>  
+</table>
+
+<h:commandButton value="Ajouter actualite"  action="#{ActualiteControllerImp.addactualite()}" onclick="myFunction()" />
+
+
+
+
+
+ <div class="card">
+        <h5>formulaire</h5>
+        <div class="ui-fluid">
+            <div class="p-field">
+                <p:outputLabel for="image" value="image"/>
+                <p:inputText id="image" />
+            </div>
+            <div class="p-field">
+                <p:outputLabel for="lastname1" value="Lastname"/>
+                <p:inputText id="lastname1"/>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</h:form>
+
+   
+       <div class="container">
+        
+        <div class="error"></div>
+    </div>
+    <script >
+    function myFunction() {
+    (async () => {
+        // create and show the notification
+        const showNotification = () => {
+            // create a new notification
+            const notification = new Notification('JavaScript Notification API', {
+                body: 'New Notification ',
+                icon: './img/js.png'
+            });
+
+            // close the notification after 10 seconds
+            setTimeout(() => {
+                notification.close();
+            }, 10 * 1000);
+
+            // navigate to a URL when clicked
+            
+            notification.addEventListener('click', () => {
+            	
+            	
+
+                window.open('http://localhost:8085/ProjectMVC/pages/actualite/acceuil.jsf', '_blank');
+            });
+        }
+
+        // show an error message
+        const showError = () => {
+            const error = document.querySelector('.error');
+            error.style.display = 'block';
+            error.textContent = 'You blocked the notifications';
+        }
+
+        // check notification permission
+        let granted = false;
+
+        if (Notification.permission === 'granted') {
+            granted = true;
+        } else if (Notification.permission !== 'denied') {
+            let permission = await Notification.requestPermission();
+            granted = permission === 'granted' ? true : false;
+        }
+
+        // show notification or error
+        granted ? showNotification() : showError();
+
+    })();
+    
+    
+    }
+    </script>     
+  
+
+
+</h:body>
+</html>
+
+
+
+
+

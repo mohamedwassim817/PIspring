@@ -1,0 +1,166 @@
+<html xmlns="http://www.w3c.org/1999/xhtml"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:p="http://primefaces.org/ui"
+        xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+
+ <h:head>
+    </h:head>
+    <h:body>
+    <ui:include src="../../template/header.xhtml"></ui:include>
+
+<style type="text/css">
+    p {
+        line-height: 1.5;
+        margin: auto;
+         display: block;
+        margin-left: auto;
+        margin-right: auto;
+       
+        
+         
+    }
+    p:repeat{
+        
+    
+    
+    }
+</style>
+
+
+
+ 
+       
+<div class="p-grid p-dir-col">
+
+ 
+  
+  
+  
+        
+        <p:repeat value="#{ActualiteController.actualites}" var="actualite" style="width: 50em;margin-left:300px;" >
+        
+        <p:column>
+<p:card  class="p-mr-2" style="width: 50em;margin-left:350px;padding:50px;"  >
+
+                   
+                    
+ <div class="p-col">
+    <f:facet name="header">
+        <img alt="user header" src="../../resources/imageUpload/#{actualite.image}"/>
+    </f:facet>
+    <f:facet name="title">
+        <h:outputText value="#{actualite.title}" />
+    </f:facet>
+    <f:facet name="subtitle">
+         <h:outputText value="#{actualite.summary}" />
+    </f:facet>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
+        quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!</p>
+
+    <f:facet name="footer">
+    
+        <p:commandButton  action="#{ActualiteController.addlikes(actualite.id,actualite.quantity)}" icon="pi pi-thumbs-up"  value="Like" />
+        
+        <p:commandButton icon="pi pi-comment" value="commentaire" styleClass="ui-button-secondary" style="margin-left: .5em"/>
+        <p:commandButton action="#{ActualiteController.removeActualite(actualite.id)}" icon="pi pi-ban" value="signaler" styleClass="ui-button-raised ui-button-danger" style="margin-left: .5em" />
+    </f:facet>
+    </div>
+<p:divider align="left">
+        <div class="p-d-inline-flex p-ai-center">
+            <i class="pi pi-user p-mr-2"/>
+            <b>Icon</b>
+            <b><h:outputText value="  " />
+            <i class="pi pi-thumbs-up"></i>
+            <span class="ui-tag"> 
+            <h:outputText value="  " />
+            <h:outputText value="#{actualite.quantity}" /> 
+              <h:outputText value="  " /></span></b>
+        </div>
+        <span><i class="pi pi-clock"/></span>
+        <span> <h:outputText value="#{actualite.releaseDate}" /></span>
+    </p:divider>
+</p:card>
+</p:column>
+ <p:divider align="center">
+        <span class="ui-tag">new</span>
+    </p:divider>
+
+</p:repeat>
+
+
+
+</div>
+
+
+
+          
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+
+
+
+
+
+
+<h:panelGroup columns="2">
+<h:form>
+<h:dataTable value="#{ActualiteController.actualites}" var="actualite" border="1">
+
+
+<h:column><f:facet name="header"><h:outputText value="image" /></f:facet>
+<h:outputText value="#{actualite.image}" />
+
+
+<div class="card">
+   
+    
+    <p:graphicImage value="#{ActualiteController.graphicText}" />
+</div>
+
+</h:column>
+<h:column><f:facet name="header"><h:outputText value="date publication" /></f:facet>
+<h:outputText value="#{actualite.releaseDate}" /></h:column>
+<h:column><f:facet name="header"><h:outputText value="Resume" /></f:facet>
+<h:outputText value="#{actualite.summary}" /></h:column>
+<h:column><f:facet name="header"><h:outputText value="titre" /></f:facet>
+<h:outputText value="#{actualite.title}" /></h:column>
+<h:column><f:facet name="header"><h:outputText value="nombre de likes" /></f:facet>
+<h:outputText value="#{actualite.quantity}" /></h:column>
+
+<h:column>
+<f:facet name="header"><h:outputText value="Action" /></f:facet>
+<h:commandButton action="#{ActualiteController.removeActualite(actualite.id)}"
+value="Supprimer" />
+
+<tr>
+<td><h:outputText value="commentaire"></h:outputText></td>
+<td>
+<h:selectOneMenu value="#{ActualiteController.comment}">
+<f:selectItem itemLabel="commentaire" itemValue="#{null}" />
+<f:selectItems  value="#{ActualiteController.comments}" />
+</h:selectOneMenu>
+</td>
+</tr>
+
+
+</h:column>
+
+</h:dataTable>
+</h:form>
+</h:panelGroup>
+
+</h:body>
+</html>
+

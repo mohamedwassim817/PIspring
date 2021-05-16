@@ -1,0 +1,67 @@
+<html xmlns="http://www.w3c.org/1999/xhtml"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:p="http://primefaces.org/ui"
+        xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+    </h:head>
+    <h:body>
+    <ui:include src="../../template/header.xhtml"></ui:include>
+ 
+ <style type="text/css">
+    .ui-panel, div.ui-state-hover {
+        margin: 10px;
+        width: 200px;
+    }
+
+    .ui-dashboard-column {
+        width: 220px;
+    }
+</style>
+
+
+
+<div class="card">
+    <h:form>
+        <p:growl id="msgs" showDetail="true" skipDetailIfEqualsSummary="true"/>
+
+        <p:dashboard id="board" model="#{dashboardView.model}">
+            <p:ajax event="reorder" listener="#{dashboardView.handleReorder}" update="msgs"/>
+
+            <p:panel id="nombreLike" header="Likes">
+                <h:outputText value="#{ActualiteController.nbrlikes}"/>
+            </p:panel>
+
+            <p:panel id="likeposts" header="like/post">
+                <h:outputText value="#{ActualiteController.moy}"/>
+            </p:panel>
+
+            <p:panel id="lifestyle" header="nombreDePosts">
+                <h:outputText value="#{ActualiteController.posts}"/>
+            </p:panel>
+
+            <p:panel id="weather" header="AgeMoyenUsers">
+                <h:outputText value="Weather Content"/>
+            </p:panel>
+
+            <p:panel id="politics" header="Parents/Enfants">
+                <h:outputText value="Politics Content"/>
+            </p:panel>
+        </p:dashboard>
+
+        <div style="clear:both"/>
+    </h:form>
+</div>
+ 
+    <div class="card">
+    
+    <p:pieChart model="#{chartJsView.pieModel}" style="width: 100%; height: 500px;"/>
+</div>
+    
+    
+ </h:body>
+    
+    
+</html>
+    
